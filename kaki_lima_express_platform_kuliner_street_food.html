@@ -41,133 +41,141 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-        }
     </style>
 </head>
-<body class="bg-brand-cream text-gray-800 font-sans pb-24 md:pb-0">
+<body class="bg-brand-cream text-gray-800 font-sans pb-20 md:pb-0">
 
-    <!-- NAVBAR -->
-    <nav class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-purple-100 shadow-sm">
+    <!-- NAVBAR RESPONSIF -->
+    <nav class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-purple-100 shadow-sm">
         <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-2">
-                <div class="bg-gradient-to-tr from-brand-purple to-brand-purple-dark text-white w-10 h-10 rounded-xl flex items-center justify-center font-black text-xl shadow-md">
+            <a href="#" class="flex items-center gap-2.5">
+                <div class="bg-gradient-to-tr from-brand-purple to-brand-purple-dark text-white w-9 h-9 md:w-10 md:h-10 rounded-xl flex items-center justify-center font-black text-lg md:text-xl shadow-md shrink-0">
                     BM
                 </div>
                 <div>
-                    <h1 class="font-extrabold text-lg leading-tight text-gray-900">WARUNG BU <span class="text-brand-purple">MADURA</span></h1>
+                    <h1 class="font-extrabold text-base md:text-lg leading-tight text-gray-900">WARUNG BU <span class="text-brand-purple">MADURA</span></h1>
                     <p class="text-[10px] text-gray-500 font-medium">Kuliner Khas, Gurih, & Mantap</p>
                 </div>
             </a>
 
-            <!-- Status Buka/Tutup & Quick Links -->
-            <div class="flex items-center gap-3">
+            <!-- Cart Button & Status -->
+            <div class="flex items-center gap-2 md:gap-3">
                 <div class="hidden sm:flex items-center gap-2 bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full text-xs font-bold border border-emerald-200">
                     <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
                     <span>Lapak Buka (10:00 - 22:00)</span>
                 </div>
-                <button onclick="toggleCart()" class="relative bg-brand-purple text-white p-2.5 rounded-xl hover:bg-brand-purple-dark transition shadow-lg shadow-purple-500/20">
-                    <i class="fa-solid fa-cart-shopping text-lg"></i>
-                    <span id="cart-badge" class="absolute -top-1.5 -right-1.5 bg-brand-purple-dark text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold hidden">0</span>
+                <button onclick="toggleCart()" class="relative bg-brand-purple text-white p-2.5 rounded-xl hover:bg-brand-purple-dark transition shadow-lg shadow-purple-500/20 active:scale-95">
+                    <i class="fa-solid fa-cart-shopping text-base md:text-lg"></i>
+                    <span id="cart-badge" class="absolute -top-1.5 -right-1.5 bg-brand-purple-dark text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold hidden">0</span>
                 </button>
             </div>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section class="relative bg-gradient-to-br from-brand-black via-brand-dark to-brand-black text-white py-12 md:py-20 overflow-hidden">
+    <!-- HERO SECTION HP-FRIENDLY -->
+    <section class="relative bg-gradient-to-br from-brand-black via-brand-dark to-brand-black text-white py-8 md:py-16 overflow-hidden">
         <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#7C3AED_1px,transparent_1px)] [background-size:16px_16px]"></div>
         <div class="max-w-6xl mx-auto px-4 relative z-10 grid md:grid-cols-2 gap-8 items-center">
-            <div>
-                <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full text-brand-purple-light text-xs font-semibold mb-4 border border-white/10">
-                    <i class="fa-solid fa-fire text-brand-purple-light"></i> Bumbu Kacang & Rempah Asli Madura
+            
+            <div class="text-left">
+                <!-- Status Buka versi Mobile Only -->
+                <div class="inline-flex sm:hidden items-center gap-2 bg-emerald-500/10 text-emerald-400 px-3 py-1 rounded-full text-xs font-semibold mb-3 border border-emerald-500/20">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                    <span>Lapak Buka (10:00 - 22:00)</span>
                 </div>
-                <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mb-4">
+
+                <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-brand-purple-light text-xs font-semibold mb-3 border border-white/10">
+                    <i class="fa-solid fa-fire text-brand-purple-light"></i> Bumbu Kacang & Rempah Asli
+                </div>
+
+                <h1 class="text-2xl sm:text-3xl md:text-5xl font-extrabold leading-tight mb-3">
                     WARUNG BU MADURA <br>
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple-light via-brand-purple to-purple-400">
                         NAGIH & HIGIENIS!
                     </span>
                 </h1>
-                <p class="text-gray-300 text-sm md:text-base mb-6 leading-relaxed">
-                    Nikmati sajian spesial resep asli Madura dengan porsi melimpah, bahan segar pilihan, dan bumbu rempah melimpah. Pesan online tanpa antre!
+
+                <p class="text-gray-300 text-xs sm:text-sm md:text-base mb-5 leading-relaxed">
+                    Sajian spesial resep asli Madura dengan porsi melimpah, bahan segar pilihan, dan bumbu rempah racikan khas. Pesan online tanpa antre!
                 </p>
                 
-                <div class="flex flex-wrap gap-3">
-                    <a href="#menu-section" class="bg-brand-purple hover:bg-brand-purple-dark text-white font-bold px-6 py-3 rounded-xl shadow-lg transition flex items-center gap-2 text-sm">
+                <div class="flex flex-col sm:flex-row gap-2.5">
+                    <a href="#menu-section" class="w-full sm:w-auto text-center bg-brand-purple hover:bg-brand-purple-dark active:scale-95 text-white font-bold px-5 py-3 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-sm">
                         <i class="fa-solid fa-utensils"></i> Lihat Menu Lezat
                     </a>
-                    <button onclick="openQrisModal()" class="bg-white/10 hover:bg-white/20 text-white font-semibold px-5 py-3 rounded-xl border border-white/20 transition flex items-center gap-2 text-sm">
+                    <button onclick="openQrisModal()" class="w-full sm:w-auto text-center bg-white/10 hover:bg-white/20 active:scale-95 text-white font-semibold px-5 py-3 rounded-xl border border-white/20 transition flex items-center justify-center gap-2 text-sm">
                         <i class="fa-solid fa-qrcode"></i> Info QRIS / Bayar
                     </button>
                 </div>
 
-                <!-- Fast Info Badges -->
-                <div class="grid grid-cols-3 gap-3 mt-8 pt-6 border-t border-white/10 text-center">
-                    <div>
-                        <p class="text-xs text-gray-400">Waktu Penyiapan</p>
-                        <p class="font-extrabold text-brand-purple-light text-sm md:text-base">⚡ 10-15 Menit</p>
+                <!-- Info Badges Mobile -->
+                <div class="grid grid-cols-3 gap-2 mt-6 pt-5 border-t border-white/10 text-center">
+                    <div class="bg-white/5 p-2 rounded-lg border border-white/5">
+                        <p class="text-[10px] text-gray-400">Waktu Penyiapan</p>
+                        <p class="font-extrabold text-brand-purple-light text-xs md:text-base">⚡ 10-15 Min</p>
                     </div>
-                    <div>
-                        <p class="text-xs text-gray-400">Rating Pelanggan</p>
-                        <p class="font-extrabold text-brand-purple-light text-sm md:text-base">⭐ 4.9 / 5.0</p>
+                    <div class="bg-white/5 p-2 rounded-lg border border-white/5">
+                        <p class="text-[10px] text-gray-400">Rating Toko</p>
+                        <p class="font-extrabold text-brand-purple-light text-xs md:text-base">⭐ 4.9 / 5.0</p>
                     </div>
-                    <div>
-                        <p class="text-xs text-gray-400">Metode Bayar</p>
-                        <p class="font-extrabold text-brand-purple-light text-sm md:text-base">💳 QRIS & Cash</p>
+                    <div class="bg-white/5 p-2 rounded-lg border border-white/5">
+                        <p class="text-[10px] text-gray-400">Metode Bayar</p>
+                        <p class="font-extrabold text-brand-purple-light text-xs md:text-base">💳 QRIS/Cash</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Banner Highlight Image / Offer -->
-            <div class="relative">
-                <div class="relative mx-auto max-w-sm rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10 group">
-                    <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80" alt="Sajian Bu Madura" class="w-full h-80 object-cover group-hover:scale-105 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-5">
-                        <span class="bg-brand-purple text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md w-max mb-1">Paling Dicari</span>
-                        <h3 class="text-xl font-bold text-white">Sate Ayam Madura Bumbu Spesial</h3>
-                        <p class="text-xs text-brand-purple-light font-semibold">Rp 22.000 <span class="line-through text-gray-400 text-[10px] ml-1">Rp 25.000</span></p>
+            <!-- Banner Highlight Image -->
+            <div class="relative mt-2 md:mt-0">
+                <div class="relative mx-auto max-w-sm rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border-2 md:border-4 border-white/10 group">
+                    <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80" alt="Sate Ayam Madura" class="w-full h-56 sm:h-72 md:h-80 object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-4 md:p-5">
+                        <span class="bg-brand-purple text-white text-[9px] md:text-[10px] font-black uppercase px-2 py-0.5 md:py-1 rounded-md w-max mb-1">Paling Dicari</span>
+                        <h3 class="text-base md:text-xl font-bold text-white">Sate Ayam Madura Bumbu Spesial</h3>
+                        <p class="text-xs md:text-sm text-brand-purple-light font-semibold">Rp 22.000 <span class="line-through text-gray-400 text-[10px] ml-1">Rp 25.000</span></p>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
     <!-- MENU & SEARCH SECTION -->
-    <section id="menu-section" class="max-w-6xl mx-auto px-4 py-10">
-        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+    <section id="menu-section" class="max-w-6xl mx-auto px-4 py-8">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-5">
             <div>
-                <h2 class="text-2xl font-extrabold text-gray-900">Pilihan Menu Favorit</h2>
-                <p class="text-xs md:text-sm text-gray-500">Pilih sajian khas Warung Bu Madura favorit Anda</p>
+                <h2 class="text-xl md:text-2xl font-extrabold text-gray-900">Pilihan Menu Favorit</h2>
+                <p class="text-xs text-gray-500">Pilih makanan dan minuman kesukaanmu</p>
             </div>
 
+            <!-- Search Bar Mobile Friendly -->
             <div class="relative w-full md:w-72">
-                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
-                <input type="text" id="search-input" oninput="filterMenu()" placeholder="Cari sate, nasi, es teh..." class="w-full pl-10 pr-4 py-2.5 bg-white rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-brand-purple shadow-sm">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
+                <input type="text" id="search-input" oninput="filterMenu()" placeholder="Cari sate, nasi, es teh..." class="w-full pl-9 pr-4 py-2 bg-white rounded-xl border border-gray-200 text-xs md:text-sm focus:outline-none focus:border-brand-purple shadow-sm">
             </div>
         </div>
 
-        <!-- Filter Categories -->
-        <div class="flex gap-2 overflow-x-auto pb-3 mb-6 hide-scrollbar">
-            <button onclick="setCategory('semua')" class="cat-btn active bg-brand-purple text-white font-bold px-4 py-2 rounded-xl text-xs md:text-sm whitespace-nowrap shadow-md transition">
-                🔥 Semua Menu
+        <!-- Filter Categories (Horizontal Scrollable) -->
+        <div class="flex gap-2 overflow-x-auto pb-2 mb-5 hide-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
+            <button onclick="setCategory('semua')" class="cat-btn active bg-brand-purple text-white font-bold px-3.5 py-2 rounded-xl text-xs whitespace-nowrap shadow-md transition">
+                🔥 Semua
             </button>
-            <button onclick="setCategory('makanan')" class="cat-btn bg-white text-gray-700 hover:bg-purple-50 font-semibold px-4 py-2 rounded-xl text-xs md:text-sm whitespace-nowrap border border-gray-200 transition">
+            <button onclick="setCategory('makanan')" class="cat-btn bg-white text-gray-700 hover:bg-purple-50 font-semibold px-3.5 py-2 rounded-xl text-xs whitespace-nowrap border border-gray-200 transition">
                 🍛 Makanan Utama
             </button>
-            <button onclick="setCategory('camilan')" class="cat-btn bg-white text-gray-700 hover:bg-purple-50 font-semibold px-4 py-2 rounded-xl text-xs md:text-sm whitespace-nowrap border border-gray-200 transition">
-                🍢 Camilan / Snack
+            <button onclick="setCategory('camilan')" class="cat-btn bg-white text-gray-700 hover:bg-purple-50 font-semibold px-3.5 py-2 rounded-xl text-xs whitespace-nowrap border border-gray-200 transition">
+                🍢 Camilan
             </button>
-            <button onclick="setCategory('minuman')" class="cat-btn bg-white text-gray-700 hover:bg-purple-50 font-semibold px-4 py-2 rounded-xl text-xs md:text-sm whitespace-nowrap border border-gray-200 transition">
-                🥤 Minuman Segar
+            <button onclick="setCategory('minuman')" class="cat-btn bg-white text-gray-700 hover:bg-purple-50 font-semibold px-3.5 py-2 rounded-xl text-xs whitespace-nowrap border border-gray-200 transition">
+                🥤 Minuman
             </button>
-            <button onclick="setCategory('paket')" class="cat-btn bg-white text-gray-700 hover:bg-purple-50 font-semibold px-4 py-2 rounded-xl text-xs md:text-sm whitespace-nowrap border border-gray-200 transition">
+            <button onclick="setCategory('paket')" class="cat-btn bg-white text-gray-700 hover:bg-purple-50 font-semibold px-3.5 py-2 rounded-xl text-xs whitespace-nowrap border border-gray-200 transition">
                 🎁 Paket Hemat
             </button>
         </div>
 
-        <div id="menu-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        <!-- Menu Grid -->
+        <div id="menu-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"></div>
     </section>
 
 </body>
